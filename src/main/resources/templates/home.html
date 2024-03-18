@@ -17,6 +17,15 @@
     <dd th:text="${userAttribute.value}"></dd>
 </dl>
 
+<p>JWT Token from API: <span th:text="${jwtToken}"></span></p>
+
+
+<form th:action="@{/getJwt}" method="post">
+    <button id="getJwt" type="submit">Get JWT From API</button>
+</form>
+
+<br>
+
 <form th:action="@{/logout}" method="post">
     <button id="logout" type="submit">Logout</button>
 </form>

@@ -13,3 +13,5 @@ spring:
             singlelogout:
               binding: POST
               response-url: "{baseUrl}/logout/saml2/slo"
+server:
+  port: 8080
