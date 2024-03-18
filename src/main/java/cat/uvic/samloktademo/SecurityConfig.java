@@ -36,6 +36,7 @@ public class SecurityConfig {
         return http.build();
     }
 
+
     private Converter<OpenSaml4AuthenticationProvider.ResponseToken, Saml2Authentication> groupsConverter() {
 
         Converter<OpenSaml4AuthenticationProvider.ResponseToken, Saml2Authentication> delegate =

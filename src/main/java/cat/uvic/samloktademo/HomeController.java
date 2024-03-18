@@ -2,6 +2,7 @@ package cat.uvic.samloktademo;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.apache.xml.security.stax.ext.SecurityContext;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -30,6 +31,7 @@ public class HomeController {
     public String getJwt(@AuthenticationPrincipal Saml2AuthenticatedPrincipal principal, Model model){
         RestTemplate restTemplate = new RestTemplate();
 
+
         String url = "http://localhost:8081/auth/login";
         String requestJson = "{\"username\":\"test\",\"password\":\"test\"}";
         HttpHeaders headers = new HttpHeaders();
@@ -39,6 +41,7 @@ public class HomeController {
         HttpHeaders responseHeaders = answer.getHeaders();
         String cookie = responseHeaders.getFirst(HttpHeaders.SET_COOKIE);
         System.out.println(cookie);
+
 
 
         model.addAttribute("jwtToken",cookie);
